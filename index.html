@@ -1,1 +1,350 @@
-Hello World
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Louis Gaillard</title>
+    <meta name="description" content="Louis Gaillard - Game Designer, Game Developer et Concepteur Pédagogique">
+    <meta name="keywords" content="Louis, Gaillard, portfolio, game, design, concepteur, pédagogie, c#, unity, isart">
+	<link rel="icon" href="imgs/favicon.ico" />
+
+    <!-- Google Open Sans Font (Light, Normal and Semi-Bold) -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,300,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+
+    <!-- Scripts -->
+    <script src="scripts/libs/jquery-2.2.4.min.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+
+	<div id="fixed-content">
+		<!--iframe id="video" src="https://www.youtube.com/embed/5MH6izGnyuYcontrols=0&iv_load_policy=3&loop=1&showinfo=0&html5=1&playlist=5MH6izGnyuY&VQ=HD1080" frameborder="0" allowfullscreen></iframe-->
+		<div id="player"></div>
+
+		<script>
+
+
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api"
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player('player', {
+height: '100%',
+width: '100%',
+playerVars: { 'enablejsapi': 1, 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'iv_load_policy': 3, 'loop': 1, 'disablekb': 1, 'playlist': 'mu3yO5fJZTI' },
+videoId: 'mu3yO5fJZTI',
+events: {
+'onReady': onPlayerReady,
+'onStateChange': onPlayerStateChange
+}
+});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+event.target.playVideo();
+BeginTooltip();
+setInterval(SwitchTooltip, 6420);
+$(".background:first").attr('id', 'black');
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+if (event.data == YT.PlayerState.PLAYING && !done) {
+done = true;
+}
+}
+		</script>
+
+		<div class="background"></div>
+		<div class="background" id="white"></div>
+	</div>
+
+	<div id="overlay">
+		<img src="imgs/down-arrow.png" id="down-button">
+
+		<div id="text">
+			<div id="name">Louis Gaillard</div>
+			<div id="job">Game Designer</div>
+			<br/> <br/> <br/>
+		</div>
+
+		<div id="tooltips">
+			<div class="tooltip">
+				<div id="name">L'Ordre du Lys</div>
+				<div id="description">Visual Novel - Ren'py</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Hipstown Corp.</div>
+				<div id="description">Social Builder - Haxe/PixieJS</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Inspector Bourricot Vs. Mr Nobody</div>
+				<div id="description">Global Game Jam 2016 - Unity 3D</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Killing Sight</div>
+				<div id="description">FPS Multijoueur - Unity 3D</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">EIS: Galactic War</div>
+				<div id="description">Tactical Multijoueur Smartphone - Unity 3D</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="section" id="me">
+			<div class="title" id="blue">A propos</div>
+			<div class="square" id="me-table">
+				<div id="photo"></div>
+				<div id="testimony">Je suis étudiant en 3e année de formation Game Design à ISART DIGITAL. En parallèle de cette formation, j'ai travaillé près de 2 ans en alternance dans le Serious Game. Je programme aussi beaucoup de jeux, principalement sur Unity 3D. Je suis un grand fan de jeux-vidéo, de musique, de littérature et de cinéma.</div>
+			</div>
+		</div>
+
+		<div class="blue" style="top: 340px"><div></div></div>
+		<!--div class="blue" id="b1" style="top: 390px"><div></div></div-->
+
+		<div class="section" id="savoir-faire">
+			<div class="title" id="white">Savoir-faire</div>
+			<div class="nav">
+				<div class="active" id="0">Game Design</div>
+				<div id="1">Digital Learning</div>
+				<div id="2">Programmation</div>
+				<div id="3">Level Design</div>
+				<div id="4">Web</div>
+				<!--div id="5">Graphisme</div-->
+			</div>
+			<div id="exp-container">
+				<div class="square exp active" id="0">
+					<div id="experience">
+						<div id="label">Expérience</div>
+						<div id="text">2 ans de formation Game Design à ISART DIGITAL, 12 jeux développés dont 6 dans le cadre de ma formation.</div>
+					</div>
+					<div id="projects">
+						<div id="label">Principaux projets</div>
+						<div id="project-grid">
+							<div class="project top left" id="GGJ"></div>
+							<div class="project top" id="Hipstown"></div>
+							<div class="project left" id="P3D"></div>
+							<div class="project" id="JDP"></div>
+						</div>
+					</div>
+				</div>
+				<div class="square exp" id="1">
+					<div id="experience" style="border: 0; padding-right: 0">
+						<div id="label">Expérience</div>
+						<div id="text">
+							Grâce à ma formation en alternance, j'ai eu la chance de travailler pendant près de deux ans chez Daesign et ITycom. Parmi mes nombreuses tâche figuraient l'élaboration de concepts, la création de Serious Game, la réalisation d'e-learning avec Articulate Storyline, l'écriture de dialogue, le prototypage, la sonorisation, le test QA etc.
+							<br /><br />
+							J'ai souvent été en charge de tout l'aspect "jeux" des Serious Game : les boucles de gameplay (objectif/challenge/récompense), les interactions, la navigation, etc.
+						</div>
+					</div>
+				</div>
+				<div class="square exp" id="2">
+					<div id="experience">
+						<div id="label">Expérience</div>
+						<div id="text">J'ai participé à la programmation de 9 jeux dont 7 sur Unity 3D que je connais maintenant très bien. Mon but est toujours d'apprendre de nouvelles choses, comme par exemple la génération de mesh 3D en temps réel, le pathfinding, le multijoueur ou encore l'optimisation des Draw Calls.</div>
+					</div>
+					<div id="projects">
+						<div id="label">Principaux projets</div>
+						<div id="project-grid">
+							<div class="project top left" id="P3D"></div>
+							<div class="project top" id="EIS"></div>
+							<div class="project left" id="CityBuilder"></div>
+							<div class="project" id="UWL"></div>
+						</div>
+					</div>
+				</div>
+				<div class="square exp" id="3">
+					<div id="experience">
+						<div id="label">Expérience</div>
+						<div id="text">Les cours de Level Design à ISART DIGITAL s'accompagnent toujours de projets, dont les quatre ci-contre. Nous avons également étudié le Rational Level Design.</div>
+					</div>
+					<div id="projects">
+						<div id="label">Principaux projets</div>
+						<div id="project-grid">
+							<div class="project top left" id="UT4"></div>
+							<div class="project top" id="Warcraft3"></div>
+							<div class="project left" id="Polarium"></div>
+						</div>
+					</div>
+				</div>
+				<div class="square exp" id="4">
+					<div id="experience">
+						<div id="label">Expérience</div>
+						<div id="text">
+							Le développement web est quelque chose que j'aime beaucoup faire. Cela me permet notamment d'aborder l'UX au sens large en pensant à l'expérience que les visiteurs auront sur les sites que je conçois.
+						</div>
+					</div>
+					<div id="projects">
+						<div id="label">Principaux projets</div>
+						<div id="project-grid">
+							<div class="project top left" id="PF-LG"></div>
+							<div class="project top" id="PF-ML"></div>
+						</div>
+					</div>
+				</div>
+				<!--div class="square exp" id="5">
+					<div id="experience">
+						<div id="label">Expérience</div>
+						<div id="text">J'essaye de pratiquer un maximum de conception 2D et 3D. J'ai réalisé divers éléments que ce soit en 2D et en 3D, pour des jeux-vidéo, pour des sites web, pour des affiches, etc.</div>
+					</div>
+					<div id="projects">
+						<div id="label">Principaux projets</div>
+						<div id="project-grid">
+							<div class="project top left" id="Octavarium"></div>
+							<div class="project top" id="P3D"></div>
+							<div class="project left" id="UWL"></div>
+						</div>
+					</div>
+				</div-->
+			</div>
+		</div>
+
+		<div class="section" id="skills">
+			<div class="title" id="blue">Compétences techniques</div>
+			<div class="square">
+				<div class="project top left">
+					<div id="img" style="background-image: url(imgs/icons/gamedev.svg)"></div>
+					<div id="text">
+						<div id="name">Game Dev</div>
+						<div id="subtitle">Unity 3D, Unreal Engine, MonoGame</div>
+					</div>
+				</div>
+				<div class="project top">
+					<div id="img" style="background-image: url(imgs/icons/prog.svg)"></div>
+					<div id="text">
+						<div id="name">Programming</div>
+						<div id="subtitle">C#, C++, Java, JS, AS3, LUA</div>
+					</div>
+				</div>
+				<div class="project top">
+					<div id="img" style="background-image: url(imgs/icons/webdev.svg)"></div>
+					<div id="text">
+						<div id="name">Web Dev</div>
+						<div id="subtitle">WordPress, HTML/CSS, jQuery</div>
+					</div>
+				</div>
+				<div class="project top">
+					<div id="img" style="background-image: url(imgs/icons/ux.svg)"></div>
+					<div id="text">
+						<div id="name">UX Design</div>
+						<div id="subtitle">Articulate Storyline, Microsoft Visio</div>
+					</div>
+				</div>
+				<div class="project left">
+					<div id="img" style="background-image: url(imgs/icons/2D.svg)"></div>
+					<div id="text">
+						<div id="name">2D</div>
+						<div id="subtitle">Illustrator, InDesign, Photoshop</div>
+					</div>
+				</div>
+				<div class="project">
+					<div id="img" style="background-image: url(imgs/icons/3D.svg)"></div>
+					<div id="text">
+						<div id="name">3D</div>
+						<div id="subtitle">Autodesk 3DS MAX & Maya</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section" id="exp-pro">
+			<div class="title" id="blue">Expérience professionnelle</div>
+			<div class="square" id="itycom">
+				<img src="imgs/itycom.png"/>
+				<div id="description">Startup dans le Digital Learning fondée en 2008, ITycom développe des formations sous Articulate Storyline, ITyStudio (son logiciel auteur) et Unity 3D.<br>Au sein de l’équipe de conception, j’étais en charge de la conception de certains Serious Games – que ce soit lors de l’avant-vente et lors du développement – et de la création des formations ITyStudio. J’ai également réalisé des modules e-learning avec Articulate Storyline.</div>
+			</div>
+			<div class="square" id="daesign">
+				<img src="imgs/daesign.png"/>
+				<!--div id="img" style="background-image: url(imgs/daesign.png)"></div-->
+				<div id="description">Entreprise pionnière dans le Digital Learning, Daesign est spécialisé dans la réalisation de Serious Game sur mesure sous Unity 3D.<br>Parmi l’ensemble des concepteurs, j’ai été chargé du design des interfaces de plusieurs Serious Game. J’étais également beaucoup sollicité quant à leur gamification. Au fil de la production, j’ai réalisé des missions de prototypage, de test QA, de sonorisation, d’intégration dans Unity 3D, etc.</div>
+			</div>
+			<br />
+			<br />
+			<a class="button" id="resume-dl" href="/imgs/Curriculum%20Vitae%20-%20Louis%20Gaillard.pdf" target="_blank">Afficher mon CV</a>
+			<br />
+		</div>
+
+		<div class="blue" style="top: 1410px"><div></div></div>
+		<!--div class="blue" id="b2" style="top: 1230px"><div></div></div-->
+
+		<div class="section" id="realisations">
+			<div class="title" id="white">Réalisations</div>
+			<div class="nav">
+				<div class="active" id="gd">Game Design</div>
+				<div id="prog">Programmation</div>
+				<div id="ld">Level Design</div>
+				<div id="scenar">Scénarisation</div>
+				<div id="other">Autres</div>
+				<!--div id="project">Tous</div-->
+			</div>
+			<div id="project-grid"></div>
+		</div>
+
+		<div class="blue" style="top: 2390px"><div></div></div>
+
+		<div class="section" id="contact">
+			<div class="title" id="white">Contact</div>
+			<div id="contact-table">
+				<div id="maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.1289671455083!2d2.395560816064661!3d48.85575107928735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d89d29f7419%3A0xae013e7348a67bae!2s18+Rue+Monte-Cristo%2C+75020+Paris!5e0!3m2!1sfr!2sfr!4v1467295378452" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+				<div class="square">
+					<!--form action="email.php" method="post"-->
+						<input type="text" id="name"  name="name" placeholder="Nom"/>
+						<input type="text" id="email" name="mail" placeholder="Adresse e-mail" />
+						<textarea type="text" id="message" name="message"  rows="10" cols="20" placeholder="Message"></textarea>
+
+						<span class="button" id="send-button">Envoyer</span>
+						<span id="feedback">Votre message a bien été envoyé</span>
+					<!--/form-->
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div id="inner">
+				<div id="copyright">Louis Gaillard - 2016 - Tous droits réservés</div>
+				<span class="button" id="scrollTop">Retourner en haut de la page</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="project-overlay">
+
+		<div id="inner">
+			<div class="white-button" id="close-button"></div>
+			<div class="square" id="table">
+				<div id="imgs"></div>
+				<div id="text">
+					<div id="name"></div>
+					<div id="subtitle"></div>
+					<div id="description"></div>
+				</div>
+			</div>
+			<div id="nav-bar">
+				<div class="white-button" id="left-button"></div>
+				<div id="page-nbr">1 / X</div>
+				<div class="white-button" id="right-button"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
