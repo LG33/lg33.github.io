@@ -9,15 +9,6 @@
 		"download": "",
 		"description": "<p>Ce jeu iPad est destiné à l'apprentissage du système décimal pour des enfants de 5 à 10 ans.</p><p>Le but du jeu est de livrer le nombre exacte de pois que le livreur commande en utilisant des pois pour les unités, des cosses pour les dizaines et des grappes pour les centaines.</p><p>Pour y jouer sur navigateur, vous devrez dézoomer la page.</p><p>Cette Game Jam été organisée par Manzalab et ISART DIGITAL dans le cadre du concours X'PRIZE Global Learning.</p><br/><a class='button' href='http://www.kalulugamejam.com/accueil' target='_blank'>En savoir plus</a><br/>"
 	}, {
-		"name": "Conscious City",
-		"subtitle": "Game Concept / Projet personnel",
-		"categories": "gd",
-		"folder": "ConsciousCity",
-		"video": "",
-		"webBuild": "",
-		"download": "",
-		"description": "<p>Conscious City est un projet de jeu de gestion de ville minimaliste et scénarisé pour terminaux mobiles dans lequel vous pourrez parler à chaque habitant.</p><p>Mais la réelle originalité du concept est que ce petit monde est en fait une représentation métaphorique du cerveau, comme le fait le film Vice-Versa de Disney-Pixar.</p><p>Le scénario du jeu commence à la 'naissance' puis se poursuit en suivant les étapes du développement d'un enfant (le joueur a de plus en plus de contrôle et de possibilités d'action).</p><p>Le projet est actuellement en cours de conception et de prototypage.</p>"
-	}, {
 		"name": "L'Odre du Lys",
 		"subtitle": "Visual Novel - Ren'py",
 		"categories": "scenar prog",
