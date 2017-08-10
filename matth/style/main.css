@@ -353,8 +353,6 @@ svg path {
   font-weight: bold;
   padding: 10px;
 	font-family: 'Gotham Bold';
-  display: table-cell;
-  vertical-align: bottom;
 }
 #realisations .project:hover #text{
 	opacity: 1;
