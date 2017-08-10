@@ -239,7 +239,7 @@ a:active, a:visited {
 }
 .nav div{
 	display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
   background: #3A86FF;
 	color: white;
 	padding: 10px;
