@@ -196,9 +196,9 @@ $(function() {
 
 		$("#realisations .project").addClass("visible");
 
-		$("#realisations .nav div").each(function(index) {
+		/*$("#realisations .nav div").each(function(index) {
 			$(this).append(" (" + $("#realisations .project." + $(this).attr("id")).length + ")");
-		});
+		});*/
 
     var currentProjectId;
 
