@@ -15,6 +15,7 @@
 
     <!-- Scripts -->
     <script src="scripts/libs/jquery-2.2.4.min.js"></script>
+    <script src="scripts/projects.js"></script>
     <script src="scripts/main.js"></script>
 </head>
 
@@ -72,6 +73,7 @@ done = true;
 		<div class="background"></div>
 		<div class="background" id="white"></div>
 	</div>
+    <div id="scroll">
 
 	<div id="overlay">
 		<img src="imgs/down-arrow.png" id="down-button">
@@ -147,19 +149,29 @@ done = true;
 
 	</div>
 
+</div>
+
 	<div id="project-overlay">
 
 		<div id="inner">
 			<div class="white-button" id="close-button"></div>
+			<div class="nav-bar" id="top">
+				<div class="white-button" id="left-button" onclick="showProjectInOverlay(currentProjectId-1)"></div>
+				<div id="text" style="text-align: center">
+					<span id="name"></span><br>
+					<span id="subtitle"></span>
+        </div>
+				<div class="white-button" id="right-button" onclick="showProjectInOverlay(currentProjectId+1)"></div>
+			</div>
 			<div class="square" id="table">
 				<div id="imgs"></div>
 				<div id="text">
-					<div id="name"></div>
-					<div id="subtitle"></div>
+					<!--div id="name"></div>
+					<div id="subtitle"></div-->
 					<div id="description"></div>
 				</div>
 			</div>
-			<div id="nav-bar">
+			<div class="nav-bar" id="media">
 				<div class="white-button" id="left-button"></div>
 				<div id="page-nbr">1 / X</div>
 				<div class="white-button" id="right-button"></div>
