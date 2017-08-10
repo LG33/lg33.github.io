@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Louis Gaillard</title>
+    <meta name="description" content="Louis Gaillard - Game Designer, Game Developer et Concepteur Pédagogique">
+    <meta name="keywords" content="Louis, Gaillard, portfolio, game, design, concepteur, pédagogie, c#, unity, isart">
+	<link rel="icon" href="imgs/favicon.ico" />
+
+    <!-- Google Open Sans Font (Light, Normal and Semi-Bold) -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,300,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+
+    <!-- Scripts -->
+    <script src="scripts/libs/jquery-2.2.4.min.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+
+	<div id="fixed-content">
+		<!--iframe id="video" src="https://www.youtube.com/embed/5MH6izGnyuYcontrols=0&iv_load_policy=3&loop=1&showinfo=0&html5=1&playlist=5MH6izGnyuY&VQ=HD1080" frameborder="0" allowfullscreen></iframe-->
+		<div id="player"></div>
+
+		<script>
+
+
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api"
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+player = new YT.Player('player', {
+height: '100%',
+width: '100%',
+playerVars: { 'enablejsapi': 1, 'autoplay': 1, 'controls': 0, 'showinfo': 0, 'iv_load_policy': 3, 'loop': 1, 'disablekb': 1, 'playlist': 'mu3yO5fJZTI' },
+videoId: 'mu3yO5fJZTI',
+events: {
+'onReady': onPlayerReady,
+'onStateChange': onPlayerStateChange
+}
+});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+event.target.playVideo();
+BeginTooltip();
+setInterval(SwitchTooltip, 6420);
+$(".background:first").attr('id', 'black');
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+if (event.data == YT.PlayerState.PLAYING && !done) {
+done = true;
+}
+}
+		</script>
+
+		<div class="background"></div>
+		<div class="background" id="white"></div>
+	</div>
+
+	<div id="overlay">
+		<img src="imgs/down-arrow.png" id="down-button">
+
+		<div id="text">
+			<img id="logo" src="./imgs/logo.png"/>
+			<div id="title">Matthieu Lopez</div>
+			<br/> <br/> <br/>
+		</div>
+
+		<div id="tooltips">
+			<div class="tooltip">
+				<div id="name">L'Ordre du Lys</div>
+				<div id="description">Visual Novel - Ren'py</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Hipstown Corp.</div>
+				<div id="description">Social Builder - Haxe/PixieJS</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Inspector Bourricot Vs. Mr Nobody</div>
+				<div id="description">Global Game Jam 2016 - Unity 3D</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">Killing Sight</div>
+				<div id="description">FPS Multijoueur - Unity 3D</div>
+			</div>
+			<div class="tooltip">
+				<div id="name">EIS: Galactic War</div>
+				<div id="description">Tactical Multijoueur Smartphone - Unity 3D</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div class="section" id="realisations">
+
+			<div class="nav">
+				<div id="project" class="active">Tout</div>
+				<div id="prog">Print</div>
+				<div id="ld">Motion</div>
+				<div id="scenar">3D</div>
+				<div id="other">GD</div>
+				<!--div id="gd">Tous</div-->
+			</div>
+			<div id="project-grid"></div>
+		</div>
+
+		<div class="section" id="contact">
+			<div class="title" id="white">Contact</div>
+			<div id="contact-table">
+				<div id="maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.1289671455083!2d2.395560816064661!3d48.85575107928735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d89d29f7419%3A0xae013e7348a67bae!2s18+Rue+Monte-Cristo%2C+75020+Paris!5e0!3m2!1sfr!2sfr!4v1467295378452" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+				<div class="square">
+					<!--form action="email.php" method="post"-->
+						<input type="text" id="name"  name="name" placeholder="Nom"/>
+						<input type="text" id="email" name="mail" placeholder="Adresse e-mail" />
+						<textarea type="text" id="message" name="message"  rows="10" cols="20" placeholder="Message"></textarea>
+
+						<span class="button" id="send-button">Envoyer</span>
+						<span id="feedback">Votre message a bien été envoyé</span>
+					<!--/form-->
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div id="inner">
+				<div id="copyright">Matthieu Lopez - 2017 - Tous droits réservés</div>
+				<span class="button" id="scrollTop">Retourner en haut de la page</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="project-overlay">
+
+		<div id="inner">
+			<div class="white-button" id="close-button"></div>
+			<div class="square" id="table">
+				<div id="imgs"></div>
+				<div id="text">
+					<div id="name"></div>
+					<div id="subtitle"></div>
+					<div id="description"></div>
+				</div>
+			</div>
+			<div id="nav-bar">
+				<div class="white-button" id="left-button"></div>
+				<div id="page-nbr">1 / X</div>
+				<div class="white-button" id="right-button"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

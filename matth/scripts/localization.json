@@ -1,0 +1,58 @@
+{
+	"website_name": {
+		"en": "",
+		"fr": ""
+	},
+	"about_title": {
+		"en": "About",
+		"fr": "A propos"
+	},
+	"about_text": {
+		"en": "I'm about to finish my Game Design degree at ISART DIGITAL. Because it was a Cooperative Education Degree, I had the opportinity to work more than 2 years in several Serious Games startups. I'm doing a lot of programming as well, mainly on Unity 3D. I'm a big fan of video games, music, litterature and cinema.",
+		"fr": "Je m'apprète à terminer ma formation Game Design à ISART DIGITAL. En parallèle de cette formation, j'ai travaillé près de 2 ans en alternance dans des entreprises de Serious Games. Je programme aussi beaucoup de jeux, principalement sur Unity 3D. Je suis un grand fan de jeux-vidéo, de musique, de littérature et de cinéma."
+	},
+	"expertise_title": {
+		"en": "Expertise",
+		"fr": "Savoir-faire"
+	},
+	"experience": {
+		"en": "Experience",
+		"fr": "Expérience"
+	},
+	"main_projects": {
+		"en": "Main projects",
+		"fr": "Principaux projets"
+	},
+	"expertise_tab_0_title": {
+		"en": "Game Design",
+		"fr": "Game Design"
+	},
+	"expertise_tab_0_experience": {
+		"en": "3 years of Game Design studies at ISART DIGITAL, 14 games developed including 8 games as part of my degree.",
+		"fr": "3 ans de formation Game Design à ISART DIGITAL, 14 jeux développés dont 8 dans le cadre de ma formation."
+	},
+	"expertise_tab_1_title": {
+		"en": "Digital Learning",
+		"fr": "Digital Learning"
+	},
+	"expertise_tab_2_title": {
+		"en": "Programming",
+		"fr": "Programmation"
+	},
+	"expertise_tab_3_title": {
+		"en": "Level Design",
+		"fr": "Level Design"
+	},
+	"expertise_tab_4_title": {
+		"en": "Web",
+		"fr": "Web"
+	},
+	"expertise_tab_5": {
+		"en": "Game Design",
+		"fr": "Game Design"
+	},
+	"expertise_tab_o": {
+		"en": "Game Design",
+		"fr": "Game Design"
+	},
+}
