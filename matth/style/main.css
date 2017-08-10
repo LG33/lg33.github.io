@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('./fonts/Gotham_Bold.otf');
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
@@ -37,7 +42,7 @@ a:active, a:visited {
 	transition: 5s;
 }
 #fixed-content .background#black{
-	background: rgba(0,0,0,0.85);
+	background: rgba(0,0,0,0.6);
 }
 #fixed-content .background#white{
 	background: #ececec;
@@ -68,20 +73,20 @@ a:active, a:visited {
 	vertical-align: middle;
 }
 #overlay #text #logo{
-	width: 250px;
+	width: 350px;
   height: auto;
 }
 #overlay #text #title{
-	color: rgba(255,255,255,0.6);
-	font-size: 2em;
-	text-transform: uppercase;
+	color: white;
+	font-size: 2.5em;
+	/*text-transform: uppercase;
 	font-weight: 100;
 	line-height: 0.5em;
 	letter-spacing: 22px;
-	text-indent: 22px;
+	text-indent: 22px;*/
 
 	/*border: 1px solid #3A86FF;*/
-	padding: 30px 5px 5px 5px;
+	padding: 5px;
 }
 
 #overlay img#down-button{
@@ -157,8 +162,7 @@ a:active, a:visited {
 	}
 }
 #overlay #tooltips .tooltip #name{
-	font-family: Times New Roman;
-	font-style: italic;
+	font-family: 'Gotham Bold';
 	font-size: 1.5em;
 	margin-bottom: 5px;
 }
@@ -201,8 +205,8 @@ a:active, a:visited {
 }
 
 #content .title{
-	font-weight: 700;
 	margin: 20px 0;
+	font-family: 'Gotham Bold';
 }
 #content .title#white{
 	color: white;
@@ -230,6 +234,7 @@ a:active, a:visited {
 .nav{
 	margin: 10px 0;
   text-align: center;
+	font-family: 'Gotham Bold';
 }
 .nav div{
 	display: inline-block;
@@ -344,6 +349,7 @@ svg path {
   transition: 0.4s;
   font-weight: bold;
   padding: 10px;
+	font-family: 'Gotham Bold';
 }
 #realisations .project:hover #text{
 	opacity: 1;
