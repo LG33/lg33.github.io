@@ -4,6 +4,6 @@ if($_POST){
     $email = $_POST['email'];
     $message = $_POST['message'];
 	
-	mail("louis.gaillard@live.fr", "[louisgaillard.fr] Message de " .$email, $message);
+	mail("lopez.matthieu1996@gmail.com", "[SITE WEB] Message de ".$name." (".$email.")", $message);
 }
 ?>
