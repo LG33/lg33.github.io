@@ -353,6 +353,9 @@ svg path {
   font-weight: bold;
   padding: 10px;
 	font-family: 'Gotham Bold';
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 #realisations .project:hover #text{
 	opacity: 1;
@@ -461,11 +464,14 @@ svg path {
 }
 
 
+#realisations{
+  margin: 0 30px;
+}
 #realisations .project{
   width: 280px;
 	height: 340px;
 	background-color: #f3f3f3;
-	margin: 13px 10px 0 0;
+	margin: 15px;
 	display: none;
 }
 #realisations .project.visible{
