@@ -135,7 +135,7 @@ $(function() {
 		$("#savoir-faire #exp-container #" + $(this).attr('id')).addClass("active");
 	});
 
-  var data = [
+  /*var data = [
   	{
   		"name": "Ariko",
   		"subtitle": "Kalulu's Game Jam - Phaser JS",
@@ -317,9 +317,9 @@ $(function() {
   		"download": "",
   		"description": ""
   	}
-  ];
+  ];*/
 
-	//$.getJSON("./scripts/projects.json", function (data) {
+  $.getJSON("./scripts/projects.json", function (data) {
 		for(var index=0; index<data.length; index++)
 		{
 			$("#realisations #project-grid").append('<div class="project ' + data[index].categories + '" id="' + index + '"><div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"><div id="text"><div id="name">' + data[index].name + '</div><div id="subtitle">' + data[index].subtitle + '</div></div></div></div>');
@@ -356,11 +356,11 @@ $(function() {
 			else
 				$("#project-overlay #description").html(projectData.description);
 
-			/*if(imageExists("imgs/projects/" + projectData.folder + "/3.jpg") == true)
+			if(imageExists("imgs/projects/" + projectData.folder + "/3.jpg") == true)
 				projectOverlayImgNbr = 3;
 			else if(imageExists("imgs/projects/" + projectData.folder + "/2.jpg") == true)
 				projectOverlayImgNbr = 2;
-			else*/
+			else
 				projectOverlayImgNbr = 1;
 
 			/*projectOverlayImgNbr = imageExists("imgs/projects/" + projectData.folder) - 1;
@@ -380,9 +380,9 @@ $(function() {
 
 		$data = data;
 
-	/*}).fail(function( jqxhr, textStatus, error ) {
+	}).fail(function( jqxhr, textStatus, error ) {
 		console.log( "Request Failed: " + textStatus + ', ' + error);
-	});*/
+	});
 
 	$("#realisations .nav div").click(function() {
 		$("#realisations .project.visible").removeClass("visible");
