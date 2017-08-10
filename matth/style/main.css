@@ -353,9 +353,8 @@ svg path {
   font-weight: bold;
   padding: 10px;
 	font-family: 'Gotham Bold';
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  display: table-cell;
+  vertical-align: bottom;
 }
 #realisations .project:hover #text{
 	opacity: 1;
