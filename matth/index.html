@@ -154,7 +154,9 @@ done = true;
 	<div id="project-overlay">
 
 		<div id="inner">
-			<div class="white-button" id="close-button"></div>
+			<div id="close">
+		     <div class="white-button" id="close-button"></div>
+			</div>
 			<div class="nav-bar" id="top">
 				<div class="white-button" id="left-button" onclick="showProjectInOverlay(currentProjectId-1)"></div>
 				<div id="text" style="text-align: center">
@@ -163,18 +165,18 @@ done = true;
         </div>
 				<div class="white-button" id="right-button" onclick="showProjectInOverlay(currentProjectId+1)"></div>
 			</div>
-			<div class="square" id="table">
-				<div id="imgs"></div>
-				<div id="text">
-					<!--div id="name"></div>
-					<div id="subtitle"></div-->
-					<div id="description"></div>
-				</div>
-			</div>
-			<div class="nav-bar" id="media">
-				<div class="white-button" id="left-button"></div>
-				<div id="page-nbr">1 / X</div>
-				<div class="white-button" id="right-button"></div>
+			<div id="showreel">
+        <div id="imgs"></div>
+  			<div class="nav-bar" id="media">
+  				<div class="white-button" id="left-button"></div>
+  				<div id="page-nbr">1 / X</div>
+  				<div class="white-button" id="right-button"></div>
+  			</div>
+      </div>
+			<div id="text">
+				<!--div id="name"></div>
+				<div id="subtitle"></div-->
+				<div id="description"></div>
 			</div>
 		</div>
 
