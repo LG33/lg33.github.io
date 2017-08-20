@@ -118,6 +118,8 @@ a:active, a:visited {
 
 	text-align: right;
 	color: white;
+
+  display: none;
 }
 #overlay #tooltips .tooltip{
 	position: absolute;
@@ -481,13 +483,14 @@ svg path {
   margin: 0 30px;
 }
 #realisations .project{
-  width: 280px;
-	height: 340px;
+  width: 0;
+  height: 340px;
 	background-color: #f3f3f3;
 	margin: 15px;
-	display: none;
+  transition: 0.2s;
 }
 #realisations .project.visible{
+  width: 280px;
 	display: inline-block;
 }
 
@@ -578,15 +581,15 @@ svg path {
     padding: 20px;
   }
 }
-#project-overlay #imgs{
-  height: 100%;
+#project-overlay #medias{
+  width: 100%; height: 100%;
+}
+#project-overlay #medias #img{
+  width: 100%; height: 100%;
 	background-size: cover;
 	background-position: center;
-
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
 }
-#project-overlay #imgs iframe{
+#project-overlay #medias iframe{
 	width: 100%; height: 100%;
 }
 #project-overlay #table #text{
@@ -626,6 +629,44 @@ svg path {
 	float: right;
   height: 50px;
 	background-image: url(../imgs/close.png);
+}
+#project-overlay #showreel{
+  position: relative;
+}
+#project-overlay .arrow{
+  position: relative;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: rgba(0,0,0,.5);
+}
+#project-overlay .arrow #img{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: 60% auto;
+  background-image: url(../imgs/down-arrow.png);
+  background-repeat: no-repeat;
+}
+#project-overlay #showreel:hover .arrow{
+	width: 70px;
+}
+#project-overlay .arrow#left{
+	left: 0;
+  /*background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));*/
+}
+#project-overlay .arrow#left #img{
+  transform: rotate(90deg);
+}
+#project-overlay .arrow#right{
+	right: 0;
+  /*background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));*/
+}
+#project-overlay .arrow#right #img{
+  transform: rotate(270deg);
 }
 
 #project-overlay .nav-bar{

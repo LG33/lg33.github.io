@@ -1,7 +1,7 @@
 var ignoreMouseWeel = false;
 var projectData;
 var projectOverlayImgNbr = 1;
-var currentImage = 1;
+var currentMediaId = 1;
 var $data;
 
 $(window).on('beforeunload', function(){
@@ -11,8 +11,9 @@ $(window).on('beforeunload', function(){
 var tooltipID = 0;
 
 function BeginTooltip(){
-	$(".tooltip:first").addClass("active");
+	//$(".tooltip:first").addClass("active");
   $("#down-button").animate({"opacity": 1}, 1000);
+  $(".background:first").attr('id', 'black');
 }
 function SwitchTooltip(){
 	if(tooltipID < 4){
@@ -77,26 +78,58 @@ function imageExists(image_url){
 	return http.status != 404;
 }
 
+function showProjectOverlayMedia(mediaId){
+  if(mediaId < 0)
+    mediaId = projectData.medias.length-1;
+  else if(mediaId > projectData.medias.length-1)
+    mediaId = 0;
+  if(mediaId == 0){
+    $("#project-overlay #showreel .arrow#left").hide();}
+  else if(mediaId == 1)
+    $("#project-overlay #showreel .arrow#left").show();
+  if(mediaId == projectData.medias.length-1)
+    $("#project-overlay #showreel .arrow#right").hide();
+  else if(mediaId == projectData.medias.length-2)
+    $("#project-overlay #showreel .arrow#right").show();
+  console.log(mediaId);
+  var media = projectData.medias[mediaId];
+  if(media == null)
+    return;
+  currentMediaId = mediaId;
+  if(media != null){
+    switch (media.type) {
+      case 'img':
+        $("#project-overlay #medias").html('<div id="img" style="background-image: url(' + media.url + ')"></div>');
+        break;
+      case 'embed':
+        $("#project-overlay #medias").html('<iframe src="' + media.url + '" frameborder="0" allowfullscreen></iframe>');
+        break;
+      case "html":
+        $("#project-overlay #medias").html(media.html);
+        break;
+      default:
+    }
+  }
+}
+
 function showProjectInOverlay(projectId){
   if(projectId < 0 || projectId > $data.length-1)
     return;
   currentProjectId = projectId;
   projectData = $data[projectId];
 
-  if(projectData.video == ""){
-    $("#project-overlay #imgs").empty();
-    $("#project-overlay #imgs").css("background-image", "url(imgs/projects/" + projectData.folder + "/1.jpg");}
-  else
-    $("#project-overlay #imgs").html('<iframe src="https://www.youtube.com/embed/' + projectData.video + '" frameborder="0" allowfullscreen></iframe>');
+  //projectData.medias.forEach(function(media){
+  showProjectOverlayMedia(0);
+  //});
 
   $("#project-overlay #name").text(projectData.name);
   $("#project-overlay #subtitle").text(projectData.subtitle);
 
-  if(projectData.webBuild != "")
+  /*if(projectData.webBuild != "")
     $("#project-overlay #description").html(projectData.description + '<br><br><a class="button" href="/build/' + projectData.webBuild + '" target="_blank">Jouer</a>');
   else if(projectData.download != "")
     $("#project-overlay #description").html(projectData.description + '<br><br><a class="button" href="/build/' + projectData.download + '" target="_blank">Télécharger</a>');
-  else
+  else*/
     $("#project-overlay #description").html(projectData.description);
 
   /*if(imageExists("imgs/projects/" + projectData.folder + "/3.jpg") == true)
@@ -114,8 +147,8 @@ function showProjectInOverlay(projectId){
       projectOverlayImgNbr = 2;
     });
   });*/
-  $("#project-overlay #page-nbr").text("1 / " + projectOverlayImgNbr);
-  currentImage = 1;
+  //$("#project-overlay #page-nbr").text("1 / " + projectOverlayImgNbr);
+  //currentMediaId = 1;
 
   $("#project-overlay").addClass("active");
   $("#project-overlay").css("z-index", 10);
@@ -184,11 +217,11 @@ $(function() {
   //$.getJSON("./scripts/projects.json", function (data) {
 		for(var index=0; index<data.length; index++)
 		{
-			$("#realisations #project-grid").append('<div class="project ' + data[index].categories + '" id="' + index + '"><div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"><div id="text"><div id="inner"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div></div></div></div>');
+			$("#realisations #project-grid").append('<div class="project ' + data[index].categories + '" id="' + index + '"><div id="img" style="background-image: url(' + data[index].thumbnail + ')"><div id="text"><div id="inner"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div></div></div></div>');
 
 			if($("#savoir-faire .project#" + data[index].folder) != null){
 				$("#savoir-faire .project#" + data[index].folder).each(function(){
-					$(this).append('<div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"></div><div id="text"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div>');
+					$(this).append('<div id="img" style="background-image: url(' + data[index].thumbnail + ')"></div><div id="text"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div>');
 					$(this).attr("id", index);
 				});
 			}
@@ -227,18 +260,16 @@ $(function() {
 	});
 
 	$("#left-button").click(function() {
-		if(currentImage > 1){
-			currentImage--;
-			$("#project-overlay #imgs").css("background-image", "url(imgs/projects/" + projectData.folder + "/" + currentImage + ".jpg");
-			$("#project-overlay #page-nbr").text(currentImage + " / " + projectOverlayImgNbr);
+		if(currentMediaId > 1){
+			currentMediaId--;
+			showProjectOverlayMedia(projectData.medias[currentMediaId]);
 		}
 	});
 
 	$("#right-button").click(function() {
-		if(currentImage < projectOverlayImgNbr){
-			currentImage++;
-			$("#project-overlay #imgs").css("background-image", "url(imgs/projects/" + projectData.folder + "/" + currentImage + ".jpg");
-			$("#project-overlay #page-nbr").text(currentImage + " / " + projectOverlayImgNbr);
+		if(currentMediaId < projectOverlayImgNbr){
+			currentMediaId++;
+			showProjectOverlayMedia(projectData.medias[currentMediaId]);
 		}
 	});
 

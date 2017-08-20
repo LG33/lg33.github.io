@@ -1,28 +1,126 @@
 var projects = [
 	{
-		"name": "Ariko",
-		"subtitle": "Kalulu's Game Jam - Phaser JS",
-		"categories": "gd prog ld",
-		"folder": "Ariko",
-		"video": "",
-		"webBuild": "Ariko",
-		"download": "",
-		"description": "Ce jeu iPad est destiné à l'apprentissage du système décimal pour des enfants de 5 à 10 ans.<br><br>Le but du jeu est de livrer le nombre exacte de pois que le livreur commande en utilisant des pois pour les unités, des cosses pour les dizaines et des grappes pour les centaines.<br><br>Pour y jouer sur navigateur, vous devrez dézoomer la page.<br><br>Cette Game Jam été organisée par Manzalab et ISART DIGITAL dans le cadre du concours X'PRIZE Global Learning.<br/><br><a class='button' href='http://www.kalulugamejam.com/accueil' target='_blank'>En savoir plus</a><br/>"
+	 "name": "Showreel 2017",
+	 "subtitle": "",
+	 "categories": "motion",
+	 "thumbnail": './imgs/thumbnails/logo.jpg',
+	 "medias": [
+		 { 'type': 'embed', 'url': 'https://player.vimeo.com/video/160794517' },
+	 ],
+	 "description": ""
+ }, {
+		"name": "Pathé",
+		"subtitle": "Refonte graphique fictive",
+		"categories": "graph",
+		"thumbnail": './imgs/thumbnails/pathe.jpg',
+		"medias": [
+			{ 'type': 'img', 'url': './imgs/projects/pathe/1.jpg' }
+		],
+		"description": "Refonte de l'identitée graphique d'un des cinéma gaumont pathé."
+	}, {
+		"name": "Quiksilver",
+		"subtitle": "Renfonce fictive du logo",
+		"categories": "graph",
+		"thumbnail": './imgs/thumbnails/quiksilver.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "Refonte de l'identitée de la marque quiksilver."
+	}, {
+		"name": "Pulp-fiction",
+		"subtitle": "Générique",
+		"categories": "motion",
+		"thumbnail": './imgs/thumbnails/pulp-fiction.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+		],
+		"description": "Création d'un nouveau générique pour Pulp-fiction, sans utiliser d'images ou de musique du film."
+	}, {
+		"name": "Vr-Typo",
+		"subtitle": "Vr game",
+		"categories": "game",
+		"thumbnail": './imgs/thumbnails/vrtk.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "Réalisation d'un jeu en réalité virtuelle sous Unity, et HTC Vive. Permettant de faire de la mise en page typographique dans un environement 3D."
+	}, {
+		"name": "Gueule de loup",
+		"subtitle": "illustration",
+		"categories": "illu",
+		"thumbnail": './imgs/thumbnails/gueule-du-loup.jpg',
+		"medias": [
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "Réalisation d'une illustration ayant pour thème les expressions françaises."
+	}, {
+		"name": "Street Robot",
+		"subtitle": "Animation de street-art",
+		"categories": "motion",
+		"thumbnail": './imgs/thumbnails/street-art.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+		],
+		"description": "Animation d'un graph murale."
 	}, {
 		"name": "L'Odre du Lys",
 		"subtitle": "Visual Novel - Ren'py",
-		"categories": "scenar prog",
-		"folder": "VN",
-		"video": "4Z2tV00bB94",
-		"webBuild": "",
-		"download": "L-Ordre-Du-Lys.zip",
+		"categories": "3d",
+		"thumbnail": './imgs/thumbnails/sdb-3d.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
 		"description": "Réalisé par 4 Game Designers et 6 Digital Artists.<br><br>L’histoire se passe dans une France du XIVème siècle aux mains des Templiers. Le joueur rencontrera des personnages lui disant qu’il fait partie d’un groupe rebelle, mais il se peut que la réalité soit tout autre..."
 	}, {
+		"name": "LocalSitting",
+		"subtitle": "Design interractif",
+		"categories": "graph",
+		"thumbnail": './imgs/thumbnails/localsitting.jpg',
+		"medias": [
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "Création d'une application pour le babysitting."
+	}, {
+		"name": "The Beat Festival",
+		"subtitle": "Teaser Fictif",
+		"categories": "graph motion",
+		"thumbnail": './imgs/thumbnails/thebeat.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/4Z2tV00bB94' },
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": ""
+	}, {
+		"name": "La Planque",
+		"subtitle": "Identité graphique",
+		"categories": "graph",
+		"thumbnail": './imgs/thumbnails/la-planque.jpg',
+		"medias": [
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "Création d'un lieu en lien avec les quais du polar permanent, pour les fan de polar."
+	}, {
+		"name": "EIS: Galactic War",
+		"subtitle": "Tactical Multijoueur Smartphone - Unity 3D",
+		"categories": "game",
+		"thumbnail": './imgs/thumbnails/la-planque.jpg',
+		"medias": [
+			{ 'type': 'img', 'url': './imgs/projects/Ariko/1.jpg' }
+		],
+		"description": "EIS: Galactic War est un jeu tactique de type Cell-War. Je l'ai développé en collaboration avec un graphiste."
+	}
+];
+/*, {
 		"name": "Hipstown Corp.",
 		"subtitle": "Social Builder - Haxe/PixieJS",
 		"categories": "gd",
 		"folder": "Hipstown",
-		"video": "",
+		"thumbnail": '../imgs/projects/VN/thumbnail.jpg',
+		"medias": [
+		],
 		"webBuild": "",
 		"download": "",
 		"description": "Dans Hipstown, devenez la ville hipster la plus populaire en gagnant de nouveaux articles exclusifs et en réalisant les modes les plus originales ! Construisez des magasins, des décos, des maisons et faites grandir votre ville hipster !<br><br>Réalisé par une équipe de 13 personnes issues des formations Game Design, Game Art et Game Design & Programming."
@@ -31,7 +129,9 @@ var projects = [
 		"subtitle": "Global Game Jam 2016 - Unity 3D",
 		"categories": "gd prog",
 		"folder": "GGJ",
-		"video": "",
+		"thumbnail": '../imgs/projects/GGJ/thumbnail.jpg',
+		"medias": [
+		],
 		"webBuild": "GGJ",
 		"download": "",
 		"description": "Jeu réalisé sur le thème « Rituels ».<br><br>Un joueur contrôle un tueur devant s’infiltrer dans la foule afin de sacrifier le personnage correspondant aux critères indiqués au centre de l’écran. Il lui faudra 5 sacrifices pour gagner la partie.<br><br>Un second joueur à la souris incarne l’Inspecteur Bourricot qui doit trouver le premier. Il peut fermer des portes pour créer un effet de surprise, puis tuer sa cible s’il l’a démasqué."
@@ -40,7 +140,10 @@ var projects = [
 		"subtitle": "FPS Multijoueur - Unity 3D",
 		"categories": "gd ld prog",
 		"folder": "P3D",
-		"video": "peCRv9_mUiU",
+		"thumbnail": '../imgs/projects/P3D/thumbnail.jpg',
+		"medias": [
+			{ 'type': 'embed', 'url': 'https://www.youtube.com/embed/peCRv9_mUiU' }
+		],
 		"webBuild": "",
 		"download": "",
 		"description": "FPS PC fait sur Unity en un mois dans lequel les objets dans le champ de vision du joueur disparaissent.<br><br>Pour gagner un kill, il faut faire disparaître entièrement son adversaire en le regardant.<br><br>Pour contrer cela, l’adversaire peut utiliser un fumégène qui le cachera de la vision du joueur."
@@ -180,4 +283,4 @@ var projects = [
 		"download": "",
 		"description": ""
 	}
-]
+]*/
