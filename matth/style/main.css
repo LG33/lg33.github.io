@@ -222,8 +222,6 @@ a:active, a:visited {
 
 
 .section{
-	/*max-width: 1024px;*/
-	margin: 20px auto 100px auto;
   text-align: center;
 }
 .section#realisations{
@@ -351,16 +349,29 @@ svg path {
 }
 #realisations .project #text{
 	opacity: 0;
-  width: calc(100% - 20px); height: calc(100% - 20px);
+  /*width: calc(100% - 20px); height: calc(100% - 20px);*/
+  width: calc(100% - 20px); height: 100%;
   background-color: rgba(0,0,0,0.5);
   color: white;
   transition: 0.4s;
   font-weight: bold;
   padding: 10px;
 	font-family: 'Gotham Bold';
+  display: table;
+}
+#realisations .project #text #inner{
+  display: table-cell;
+  vertical-align: bottom;
+  width: 100%; height: 100%;
+  padding-bottom: 10px;
+  transform: scale(0.8);
+  transition: transform 0.5s;
 }
 #realisations .project:hover #text{
 	opacity: 1;
+}
+#realisations .project:hover #text #inner{
+  transform: scale(1);
 }
 #savoir-faire .project #text, #skills .project #text{
 	display: table-cell;
@@ -524,9 +535,9 @@ svg path {
 	width: 100%; height: 100%;
 }
 #project-overlay #table #text{
-	padding: 10px 13px;
-	display: table-cell;
-	vertical-align: top;
+  display: table-cell;
+	padding-left: 13px;
+  vertical-align: top;
 }
 #project-overlay #text #name{
 	font-size: 1.2em;

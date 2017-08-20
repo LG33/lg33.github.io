@@ -93,9 +93,9 @@ function showProjectInOverlay(projectId){
   $("#project-overlay #subtitle").text(projectData.subtitle);
 
   if(projectData.webBuild != "")
-    $("#project-overlay #description").html(projectData.description + '<br/><a class="button" href="/build/' + projectData.webBuild + '" target="_blank">Jouer</a>');
+    $("#project-overlay #description").html(projectData.description + '<br><br><a class="button" href="/build/' + projectData.webBuild + '" target="_blank">Jouer</a>');
   else if(projectData.download != "")
-    $("#project-overlay #description").html(projectData.description + '<br/><a class="button" href="/build/' + projectData.download + '" target="_blank">Télécharger</a>');
+    $("#project-overlay #description").html(projectData.description + '<br><br><a class="button" href="/build/' + projectData.download + '" target="_blank">Télécharger</a>');
   else
     $("#project-overlay #description").html(projectData.description);
 
@@ -184,11 +184,11 @@ $(function() {
   //$.getJSON("./scripts/projects.json", function (data) {
 		for(var index=0; index<data.length; index++)
 		{
-			$("#realisations #project-grid").append('<div class="project ' + data[index].categories + '" id="' + index + '"><div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"><div id="text"><div id="name">' + data[index].name + '</div><div id="subtitle">' + data[index].subtitle + '</div></div></div></div>');
+			$("#realisations #project-grid").append('<div class="project ' + data[index].categories + '" id="' + index + '"><div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"><div id="text"><div id="inner"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div></div></div></div>');
 
 			if($("#savoir-faire .project#" + data[index].folder) != null){
 				$("#savoir-faire .project#" + data[index].folder).each(function(){
-					$(this).append('<div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"></div><div id="text"><div id="name">' + data[index].name + '</div><div id="subtitle">' + data[index].subtitle + '</div></div>');
+					$(this).append('<div id="img" style="background-image: url(imgs/projects/' + data[index].folder + '/thumbnail.jpg)"></div><div id="text"><span id="name">' + data[index].name + '</span><br><span id="subtitle">' + data[index].subtitle + '</span></div>');
 					$(this).attr("id", index);
 				});
 			}
