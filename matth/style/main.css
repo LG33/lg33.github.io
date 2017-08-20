@@ -518,14 +518,21 @@ svg path {
   #project-overlay #inner{
     grid-template-rows: 70px 70px 550px;
     grid-template-columns: 2fr 1fr;
-  	max-width: 1224px;
+  	width: 1224px;
   }
 }
-@media screen and (min-width: 800px) and (max-width: 1200px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
   #project-overlay #inner{
     grid-template-rows: 70px 70px 450px;
     grid-template-columns: 2fr 1fr;
   	max-width: 1024px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  #project-overlay #inner{
+    grid-template-rows: 70px 70px 350px;
+    grid-template-columns: 2fr 1fr;
+  	max-width: 824px;
   }
 }
 @media screen and (min-width: 800px) {
@@ -549,7 +556,7 @@ svg path {
 }
 @media screen and (max-width: 800px) {
   #project-overlay #inner{
-    grid-template-rows: 70px 70px 60vh auto;
+    grid-template-rows: 70px 70px 55vw auto;
     grid-template-columns: 1fr;
     width: 100%;
   }

@@ -38,7 +38,7 @@ function ScrollToTop(){
 
 function ScrollToContent(){
 	$('#scroll').animate({
-		scrollTop: $("#content").offset().top
+		scrollTop: $("#content").offset().top + 10
 	}, 500);
 	ignoreMouseWeel = true;
 	//$(".background#white").addClass("active");
